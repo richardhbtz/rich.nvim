@@ -2,18 +2,22 @@ local M = {}
 
 M.treesitter = {
   ensure_installed = {
-    "c",
-    "cpp",
-
-    "rust",
-    "go",
-
     "lua",
+    "bash",
+
     "html",
     "css",
     "javascript",
     "typescript",
     "tsx",
+    "org",
+    "svelte",
+
+    "c",
+    "go",
+    "cpp",
+    "rust",
+    "c_sharp",
   },
 
   indent = {
@@ -30,21 +34,37 @@ M.mason = {
     -- web dev stuff
     "css-lsp",
     "html-lsp",
-    "typescript-language-server",
-    "tailwindcss-language-server",
-    "deno",
     "prettier",
+    "typescript-language-server",
+    "svelte-language-server",
 
-    -- c/cpp stuff
+    -- normal people stuff
     "clangd",
     "clang-format",
-
-    -- go stuff
+    "rust-analyzer",
+    "omnisharp",
     "golines",
     "gopls",
 
-    -- rust stuff
-    "rust-analyzer"
+    -- shell stuff
+    "shfmt",
+    "python-lsp-server"
+  },
+}
+
+-- git support in nvimtree
+M.nvimtree = {
+  git = {
+    enable = true,
+  },
+
+  renderer = {
+    highlight_git = true,
+    icons = {
+      show = {
+        git = true,
+      },
+    },
   },
 }
 

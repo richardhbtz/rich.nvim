@@ -7,15 +7,6 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      -- format & linting
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-          require "custom.configs.null-ls"
-        end,
-      },
-    },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
@@ -47,23 +38,26 @@ local plugins = {
     end,
   },
 
-  -- Discord Rich Presence
   {
-    "richardhbtz/presence.nvim",
-    init = function()
-      require("presence").setup()
+    "stevearc/conform.nvim",
+    --  for users those who want auto-save conform + lazyloading!
+    -- event = "BufWritePre"
+    config = function()
+      require "custom.configs.conform"
     end,
   },
 
   {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
+    "richardhbtz/presence.nvim",
+    init = function()
+      require "presence".setup()
+    end,
   },
 
   {
     "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup()
+    init = function()
+      require "nvim-ts-autotag".setup()
     end,
   },
 
