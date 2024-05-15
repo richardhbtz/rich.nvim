@@ -8,6 +8,23 @@ return {
   },
 
   {
+  'windwp/nvim-ts-autotag', 
+   init = function() 
+     require('nvim-ts-autotag').setup() 
+   end,
+  },
+
+  {
+    "LunarVim/breadcrumbs.nvim",
+    dependencies = {
+        {"SmiteshP/nvim-navic"},
+    },
+    init = function()
+      require("breadcrumbs").setup()
+    end,
+  },
+
+  {
     "richardhbtz/presence.nvim",
     init = function()
       require("presence").setup()
