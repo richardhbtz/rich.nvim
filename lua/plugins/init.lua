@@ -6,18 +6,35 @@ return {
       require "configs.conform"
     end,
   },
+  {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
+  },
 
   {
-  'windwp/nvim-ts-autotag', 
-   init = function() 
-     require('nvim-ts-autotag').setup() 
-   end,
+    'windwp/nvim-ts-autotag',
+    init = function()
+      require('nvim-ts-autotag').setup()
+    end,
   },
 
   {
     "LunarVim/breadcrumbs.nvim",
     dependencies = {
-        {"SmiteshP/nvim-navic"},
+      { "SmiteshP/nvim-navic" },
     },
     init = function()
       require("breadcrumbs").setup()
