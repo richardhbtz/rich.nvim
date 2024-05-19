@@ -29,6 +29,8 @@ return {
     init = function()
       require('nvim-highlight-colors').setup({
         render = 'virtual',
+        enable_named_colors = true,
+        enable_tailwind = true,
       })
     end,
   },
@@ -41,13 +43,8 @@ return {
   },
 
   {
-    "LunarVim/breadcrumbs.nvim",
-    dependencies = {
-      { "SmiteshP/nvim-navic" },
-    },
-    init = function()
-      require("breadcrumbs").setup()
-    end,
+    "nvchad/nvim-colorizer.lua",
+    enabled = false,
   },
 
   {
@@ -91,7 +88,8 @@ return {
     opts = {
       ensure_installed = {
         "lua-language-server", "stylua",
-        "rust-analyzer", "gopls", "golines"
+        "rust-analyzer", "gopls", "golines",
+        "typescript-language-server",
       },
     },
   },
@@ -100,7 +98,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "rust", "lua", "python", "json", "go"
+        "rust", "lua", "python", "json", "go", "typescript", "svelte", "toml"
       },
     },
   },
