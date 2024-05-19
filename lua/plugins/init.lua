@@ -25,6 +25,15 @@ return {
   },
 
   {
+    'brenoprata10/nvim-highlight-colors',
+    init = function()
+      require('nvim-highlight-colors').setup({
+        render = 'virtual',
+      })
+    end,
+  },
+
+  {
     'windwp/nvim-ts-autotag',
     init = function()
       require('nvim-ts-autotag').setup()
